@@ -1,1 +1,1 @@
-"# 24SpringHibernate" 
+Spring with Hibernate 
