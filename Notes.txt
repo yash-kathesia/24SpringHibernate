@@ -1,0 +1,26 @@
+create spring project with same lib 
+just add spring data jpa 
+
+create folders 
+add views folder 
+
+add tomcat embeded jasper 
+add all basic configuration that we have in spring 
+-----------------------------------------------------------------------
+
+
+table -> entity -> course 
+	courseId : integer: primary key 
+	courseName : String 
+	durationHR : 60
+	
+------------------------------------------------------------------------	
+
+1) create an interface extends JpaRepository 
+		UserRepository 
+		BatchRepository 
+2) JpaRepository<Table,Id>
+				 <UserEntity,Integer> 
+3) @Repository 
+				 
+--------------------------------------------------------------------------
