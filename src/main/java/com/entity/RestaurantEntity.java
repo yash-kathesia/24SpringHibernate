@@ -5,16 +5,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.Data;
 
+@Data
 @Entity
-@Table(name = "student")
-public class StudentEntity {
+@Table(name = "restaurants")
+public class RestaurantEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer studentId;
+	private Integer restaurantId;
 	private String name;
-	private String gender;
-	private Integer fees;
-
+	private String address;
+	private String category;
+	
 }

@@ -11,7 +11,7 @@
 	<h2>New User</h2>
 
 	<form action="saveuser" method="post">
-		<div class="form-group mb-3">
+		<div class="form-group">
 		<label for="firstName" class="form-label">First Name : </label>
 		<input type="text" class="form-control" name="firstName" id="firstName" />
 		</div>
