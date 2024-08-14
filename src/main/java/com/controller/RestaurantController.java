@@ -21,6 +21,7 @@ public class RestaurantController {
 
 	@PostMapping("saveRestaurant")
 	public String saveRestaurant(RestaurantEntity restaurantEntity) {
+		// Insert Query
 		restaurantRepository.save(restaurantEntity);		
 		return "Success";
 	}
