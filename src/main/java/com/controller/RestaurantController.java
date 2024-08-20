@@ -28,7 +28,7 @@ public class RestaurantController {
 	public String saveRestaurant(RestaurantEntity restaurantEntity) {
 		// Insert Query
 		restaurantRepository.save(restaurantEntity);
-		return "Success";
+		return "redirect:/listRestaurants";
 	}
 
 	@GetMapping("/listRestaurants")
@@ -57,4 +57,10 @@ public class RestaurantController {
 		}
 	}
 
+	@PostMapping("updateRestaurant")
+	public String updateRestaurant(RestaurantEntity restaurantEntity) {
+		// Update Query
+		restaurantRepository.save(restaurantEntity);
+		return "redirect:/listRestaurants";
+	}
 }

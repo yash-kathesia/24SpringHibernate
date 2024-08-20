@@ -14,20 +14,25 @@
 			<div class="col-md-6">
 	<h2>Edit your Restaurant Here</h2>
 
-	<form action="saveRestaurant" method="post"> 
+	<form action="updateRestaurant" method="post">
+	
+		<div class="form-group">
+		<input type="hidden" class="form-control" name="restaurantId" id="restaurantId" value="${restaurant.restaurantId}" />
+		</div>
+	
 		<div class="form-group">
 		<label for="name" class="form-label">Restaurant Name : </label>
-		<input type="text" class="form-control" name="name" id="name" value="${restaurant.getName()}" />
+		<input type="text" class="form-control" name="name" id="name" value="${restaurant.name}" />
 		</div>
 		
 		<div class="form-group">
 		<label for="address" class="form-label">Address : </label>
-		<input type="text" name="address" id="address" class="form-control" value="${restaurant.getAddress()}" />
+		<input type="text" name="address" id="address" class="form-control" value="${restaurant.address}" />
 		</div>
 
 		<div class="form-group">
 		<label for="category" class="form-label">Category : </label>
-		<input type="text" name="category" id="category" class="form-control" value="${restaurant.getCategory()}" />
+		<input type="text" name="category" id="category" class="form-control" value="${restaurant.category}" />
 		</div>
 		
 		<input type="submit" name="submitBtn" id="submitBtn" class="btn btn-success" value="Save Details" />
