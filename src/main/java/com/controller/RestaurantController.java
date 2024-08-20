@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,11 +39,22 @@ public class RestaurantController {
 	}
 	
 	@GetMapping("/deleteById")
-	public String deleteById(@RequestParam("restaurantId") Integer restaurantId ,Model model) {
+	public String deleteById(@RequestParam("restaurantId") Integer restaurantId) {
 		restaurantRepository.deleteById(restaurantId);
 		return "redirect:/listRestaurants";
 	}
 	
-	
+	@GetMapping("/editById")
+	public String EditById(@RequestParam("restaurantId") Integer restaurantId,Model model) {
+		//List<RestaurantEntity> restaurants = restaurantRepository.findById(restaurantId);
+		Optional<RestaurantEntity> op = restaurantRepository.findById(restaurantId);
+		if(op.isEmpty()) {
+			return "Error";
+		}
+		else {
+			model.addAttribute("restaurant", op.get());
+			return "EditRestaurant";			
+		}
+	}
 
 }

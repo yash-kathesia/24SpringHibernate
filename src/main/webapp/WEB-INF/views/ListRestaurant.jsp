@@ -76,6 +76,7 @@
                 <tr>
                     <th>Restaurant ID</th>
                     <th>Name</th>
+                    <th>Address</th>
                     <th>Category</th>
                     <th>Action</th>
                 </tr>
@@ -86,8 +87,10 @@
                     out.print("<tr>");
                     out.print("<td>" + r.getRestaurantId() + "</td>");
                     out.print("<td>" + r.getName() + "</td>");
+                    out.print("<td>" + r.getAddress() + "</td>");
                     out.print("<td>" + r.getCategory() + "</td>");
-                    out.print("<td><a href='deleteById?restaurantId=" + r.getRestaurantId() + "' class='btn btn-danger btn-sm'>Delete</a></td>");
+                    out.print("<td><a href='deleteById?restaurantId=" + r.getRestaurantId() + "' class='btn btn-danger btn-sm'>Delete</a>");
+                    out.print(" | <a href='editById?restaurantId=" + r.getRestaurantId() + "' class='btn btn-success btn-sm'>Edit</a></td>");
                     out.print("</tr>");
                 }
                 %>
