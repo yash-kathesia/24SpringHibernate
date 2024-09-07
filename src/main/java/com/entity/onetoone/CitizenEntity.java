@@ -1,4 +1,4 @@
-package com.entity;
+package com.entity.onetoone;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -10,16 +10,17 @@ import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Data
+@Table(name="citizen")
 @Entity
-@Table(name = "student")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StudentEntity {
+public class CitizenEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer studentId;
-	String name;
-	String gender;
-	Integer fees;
-
+	Integer citizenId;
+	
+	String firstName;
+	String lastName;
+	String emailId;
+	Integer age;
 }

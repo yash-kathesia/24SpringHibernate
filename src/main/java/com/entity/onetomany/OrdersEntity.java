@@ -1,25 +1,33 @@
-package com.entity;
+package com.entity.onetomany;
+
+import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
 @Data
-@Entity
-@Table(name = "student")
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StudentEntity {
+@Entity
+@Table(name = "orders")
+public class OrdersEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer studentId;
-	String name;
-	String gender;
-	Integer fees;
-
+	Integer orderId;
+	
+	Date orderDate;
+	
+	Float amount;
+	
+	@ManyToOne
+	@JoinColumn(name = "customerId")
+	CustomerEntity customers;
 }

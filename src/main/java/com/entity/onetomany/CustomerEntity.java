@@ -1,25 +1,34 @@
-package com.entity;
+package com.entity.onetomany;
+
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.experimental.FieldDefaults;
 
-@Data
 @Entity
-@Table(name = "student")
+@Data
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class StudentEntity {
+@Table(name = "customers")
+public class CustomerEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Integer studentId;
-	String name;
+	Integer customerId;
+	
+	String firstName;
+	String lastName;
 	String gender;
-	Integer fees;
-
+	
+	Boolean isActive;
+	
+	@OneToMany(mappedBy = "customers")
+	List<OrdersEntity> orders;
+	
 }
